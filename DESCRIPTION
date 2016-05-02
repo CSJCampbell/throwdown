@@ -1,0 +1,12 @@
+Package: throwdown
+Title: Strategies for playing the Pairing Game
+Version: 0.0.0.9000
+Authors@R: person("Chris", "Campbell", email = "chrissjcampbell@googlemail.com", role = c("aut", "cre"))
+Description: The Pairing Game is two players revealing one piece at a time. For
+    each pair of pieces, one player wins one point. The player with the most points
+    wins.
+Depends:
+    R (>= 3.0.2)
+License: GPL-2
+LazyData: true
+RoxygenNote: 5.0.1
