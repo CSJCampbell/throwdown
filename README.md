@@ -5,6 +5,7 @@ An [R package](http://www.r-project.org/) to play a two player game of pairing.
 
 Play a game by providing a sequence of numbers (typically 5).
 The game is played in the following sequence:
+
 1. player a reveals her first number
 2. player b reveals his first two numbers
 3. player a selects one of player b's revealed numbers to match with her revealed number
@@ -40,6 +41,7 @@ and a function which will pick a number in one of two ways, _pair_ or _reveal_.
 
 
 ```R
+library(throwdown)
 # a function which selects numbers 
 pickerMax(active = 2, revealed = c(3, 1), type = "pair")
 # play a game between two players
