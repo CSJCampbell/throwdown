@@ -62,10 +62,14 @@ pickerRandom <- function(active, revealed,
     type = c("pair", "reveal")) {
     type <- match.arg(type)
     x <- switch(type,
-        "pair" = seq_along(revealed),
+        "pair" = {
+            x <- seq_along(revealed)
+            x[is.na(revealed)] <- NA
+            x
+        },
         "reveal" = {
             x <- seq_along(active)
-            x[na.omit(exclude)] <- NA
+            x[unique(c(na.omit(exclude), which(is.na(active))))] <- NA
             x
         })
     if (length(na.omit(x)) < 1) { 

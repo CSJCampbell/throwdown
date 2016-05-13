@@ -95,6 +95,11 @@ test_that("normal case", {
     expect_equal(object = pickerRandom(active = 1:5, 
             revealed = 1:5, type = "reveal"),
         expected = 3)
+    
+    set.seed(15242)
+    expect_equal(object = pickerRandom(active = c(4L, NA, 2L, NA, NA), 
+            revealed = 4, type = "reveal"),
+        expected = 1)
 })
 
 
@@ -181,6 +186,11 @@ test_that("normal case", {
             revealed = 4, 
             exclude = 1),
         expected = 1)
+    
+    # prefer draws over defeats
+    expect_equal(object = pickerJustMax(active = 3, 
+        revealed = 2:3),
+        expected = 2)
     
     expect_equal(object = pickerJustMax(
             active = rep(1, 5), 
